@@ -15,12 +15,12 @@ if "%~1"=="" (
 echo Detected Title ID: %TITLEID%
 echo Target folder: %TARGET%
 
-REM Ensure sce_sys exists
+REM Ensure sce_sys exists in Image0
 if not exist "%TARGET%\Image0\sce_sys" (
     mkdir "%TARGET%\Image0\sce_sys"
 )
 
-REM Merge Sc0 contents into Image0\sce_sys (overwrite existing files)
+REM Merge Sc0 contents into Image0\sce_sys
 xcopy "%TARGET%\Sc0\*" "%TARGET%\Image0\sce_sys\" /E /H /C /I /Y /R
 
 REM Delete Sc0
